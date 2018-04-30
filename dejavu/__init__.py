@@ -107,7 +107,7 @@ class Dejavu(object):
                 song_name=song_name
             )
             sid = self.db.insert_song(song_name, file_hash)
-
+            print 'start to insert hashes, lens:' + len(hashes)
             self.db.insert_hashes(sid, hashes)
             self.db.set_song_fingerprinted(sid)
             self.get_fingerprinted_songs()
